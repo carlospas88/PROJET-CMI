@@ -3,7 +3,7 @@
 # Vérificateur de la solution
 
 apercu = True
-# permet l'affichage 
+# permet l'affichage d'une image si envie
 
 from bibimages import *
 import csv
