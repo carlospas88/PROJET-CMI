@@ -24,17 +24,17 @@ def readfile(file,apercu):
     numZone = 0
     for row in fichier: # permet de faire une boucle qui lit ligne par ligne le fichier
         
-        if b == -1 and yTab != Taille: #assigne les valeur au tableau qui est créée dans un autre if, le b == -1 signifie que l'on a lus toute les lignes avant les valeurs des cases
+        if b == -1 and yTab != Taille: #assigne les valeurs au tableau qui est crée dans un autre if, le b == -1 signifie que l'on a lu toutes les lignes avant les valeurs des cases
             T[yTab][xTab][0] = numZone #assigne le numéro de zone comme première valeur 
             numZone = numZone + 1
             for i in range(1,nbEsp+2):
-                T[yTab][xTab][i] = int(row[i+1]) #lis les valeurs terre ou mer, puis le nombres de poissons de chaque ligne et les ajoute au tableau
+                T[yTab][xTab][i] = int(row[i+1]) #lis les valeurs terre ou mer, puis le nombre de poissons de chaque ligne et les ajoute au tableau
             xTab += 1 # décale la coordée x de 1
         
-        if b == 'Oui': # Permet de lire la toute première ligne, qui correspond au nombre d'espèce à protéger.
-            b = int(row[0])+2 # assigne a b le nombre de ligne où l'on a des informations sur les poissons
+        if b == 'Oui': # Permet de lire la toute première ligne, qui correspond au nombre d'espèces à protéger.
+            b = int(row[0])+2 # assigne à b le nombre de ligne où l'on a des informations sur les poissons
             nbEsp = int(row[0])
-            espece = [0]*nbEsp #créer un tableau où l'on vas mettre les quantité de poissons à protéger.
+            espece = [0]*nbEsp #créer un tableau où l'on va mettre les quantités de poissons à protéger.
         
         if b > 0: # tant que b>0, on est encore en train de lire les lignes concernant les noms de poissons et la quantité à protéger
             if b!=nbEsp+2 and b!=nbEsp+1: # marche, je ne sais pas trop pourquoi, il y a un décalage de deux, il y a bien un décalage de 1 car ce if est après l'autre ou b est définit, on lit donc la même ligne
