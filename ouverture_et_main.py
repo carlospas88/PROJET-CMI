@@ -1,3 +1,10 @@
+import os
+#pour ouvrir le fichier
+
+# Ouverture du fichier de donnée,
+# Affichage de la solution, + affichage image
+# Vérificateur de la solution
+
 apercu = True
 # permet l'affichage d'une image si besoin
 
@@ -8,26 +15,24 @@ from EcritureSolution import *
 from Verificateur import *
 
 # Ouvrir le fichier csv, lien a changer en fonction du fichier choisi
-file = open(r"C:\Users\tomgi\Documents\Projet Optim\smalldata\detroit_2_100_100_5.txt_hard.txt",'r')
+file = open(r"C:\Users\tomgi\Documents\Projet Optim\smalldata\archipel_2_10_10_2.txt_hard.txt",'r')
 
 
 def readfile(file,apercu):
-    print("Ouverture du fichier ... ")
+    print("Ouverture du fichier ...\n")
     fichier = csv.reader(file,delimiter=";") # ouvre le fichier 
-    xTab = 0
     yTab = 0
+    xTab = 0
     Taille = 0
     b = 'Oui'
     cptEsp = 0
-    numZone = 0
     for row in fichier: # permet de faire une boucle qui lit ligne par ligne le fichier
         
-        if b == -1 and yTab != Taille: #assigne les valeurs au tableau qui est créé dans un autre if, le b == -1 signifie que l'on a lus toute les lignes avant les valeurs des cases
-            T[yTab][xTab][0] = numZone #assigne le numéro de zone comme première valeur 
-            numZone = numZone + 1
+        if b == -1 and xTab != Taille: #assigne les valeurs au tableau qui est créé dans un autre if, le b == -1 signifie que l'on a lus toute les lignes avant les valeurs des cases
+            T[xTab][yTab][0] = yTab*Taille+xTab #assigne le numéro de zone comme première valeur 
             for i in range(1,nbEsp+2):
-                T[yTab][xTab][i] = int(row[i+1]) #lis les valeurs terre ou mer, puis le nombre de poissons de chaque ligne et les ajoute au tableau
-            xTab += 1 # décale la coordée x de 1
+                T[xTab][yTab][i] = int(row[i+1]) #lis les valeurs terre ou mer, puis le nombre de poissons de chaque ligne et les ajoute au tableau
+            yTab += 1 # décale la coordée x de 1
         
         if b == 'Oui': # Permet de lire la toute première ligne, qui correspond au nombre d'espèces à protéger.
             b = int(row[0])+2 # assigne a b le nombre de ligne où l'on a des informations sur les poissons
@@ -51,14 +56,14 @@ def readfile(file,apercu):
                 for dz in range(Taille):
                     T[dy][dz] = [0]*(2+nbEsp) # on remplace les 0 des lignes par un tableau avec un nombre suffisant de cases pour mettre toutes les valeurs
         
-        if xTab == Taille and b == -1: # quand on arrive au bout de la ligne on passe à la colonne d'après
-            xTab = 0
-            yTab += 1
+        if yTab == Taille and b == -1: # quand on arrive au bout de la ligne on passe à la colonne d'après
+            yTab = 0
+            xTab += 1
     file.close()
     return (Taille,T,espece,nbEsp)
 
 def afficheApercu(Taille,TAp,img): # lit le tableau et regarde la case [1] qui a la valeur Terre/mer
-    print("Création de l'image ...")
+    print("Création de l'image ...\n")
     for i in range(Taille):
         for j in range(Taille):
             if TAp[i][j][1] == 0 :
@@ -70,18 +75,18 @@ def afficheApercu(Taille,TAp,img): # lit le tableau et regarde la case [1] qui a
     return img
 
 def afficheApercuFinal(Taille,TSol,img): #Affiche les zones protégée 
-    print("Affichage final ...")
+    print("Affichage final ...\n")
     q = 0 
     for i in range(len(TSol)):
         i = int(TSol[i])
-        y = i%Taille
-        x = i//Taille
+        y = i//Taille
+        x = i%Taille
         colorierPixel(img,x,y,(255,100,100))
     afficherImage(img)
 
 (Taille,T,espece,nbEsp) = readfile(file,apercu)
 
-print("Algo1 ...")
+print("Algo1 ...\n")
 Solution = algo1(T,Taille,espece,nbEsp)
 
 img = nouvelleImage(Taille,Taille)
