@@ -22,11 +22,13 @@ def algo1(T,Taille,Espece,nbEsp):
     solution = []
     TabAux = [0]*(Taille**2)
     nbCase = 0
-    print("Trie du tableau ...")
+    print("Trie du tableau ...\n")
+    
     for i in range(Taille):
         for j in range(Taille):
-            TabAux[nbCase] = [nbCase,sommeEspece(T[i][j],nbEsp)]
+            TabAux[nbCase] = [j*Taille+i,sommeEspece(T[i][j],nbEsp)]
             nbCase = nbCase + 1
+    
     for i in range(Taille**2):
         max = TabAux[i][1]
         for j in range(i,Taille**2):
@@ -37,14 +39,17 @@ def algo1(T,Taille,Espece,nbEsp):
         TabAux[i]=TabAux[vartemp]
         TabAux[vartemp]=tmp
     testEspece = [0]*nbEsp
+    
+    print("Cherche les solutions ...\n")
     n = 0
     test = TestQt(Taille,TabAux[0][0],T,Espece,nbEsp,testEspece)
-    print("Cherche les solutions ...")
     while test == False :
         solution = solution + [TabAux[n][0]]
+        print(n,TabAux[n])
         n = n + 1
         test = TestQt(Taille,TabAux[n][0],T,Espece,nbEsp,testEspece)
-    #print(TabAux)
-    print(Espece)
-    print(testEspece)
+    solution = solution + [TabAux[n][0]]
+    print("Objectif :",Espece)
+    print("Nombre protégé",testEspece,"\n")
+    return solution
     return solution
