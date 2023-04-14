@@ -30,6 +30,7 @@ def verificateur(Tab,TabSolution,nbZone,nbSecteur,cas,espece,Taille):
             erreur = True
 
     if erreur == True:
+        #si les paramètres en entrée sont incorrecte alors on ne pourra pas lire le tableau correctement, on s'arrete donc ici pour eviter une erreur du programme
         print("Erreur, impossible de continuer à cause de l'une des erreurs ci dessus")
         return
     
@@ -40,8 +41,8 @@ def verificateur(Tab,TabSolution,nbZone,nbSecteur,cas,espece,Taille):
     testEspece = [0] * nbEsp
     if cas == True:
         for case in TabSolution:
-            y = case%Taille
-            x = case//Taille
+            y = case//Taille
+            x = case%Taille
             if Tab[x][y][0] != case:
                 print("Erreur, problème de coordonée impossible de continuer, x =",x,",y=",y,",case=",case,",Tab[x][y][0]=",Tab[x][y][0])
                 return
@@ -53,3 +54,8 @@ def verificateur(Tab,TabSolution,nbZone,nbSecteur,cas,espece,Taille):
             if testEspece[j]<espece[j]:
                 print("La quantité protégée pour l'espèce ",j," n'est pas suffisante")
         print("Si aucun message d'erreur n'est apparu alors la solution est correcte")
+
+
+    # pour le cas 2, on véfifie les mêmes conditions mais on doit vérifier en plus que chaque zone est rectangle :
+    # pour cela on prend les 2 coins en haut à gauche et en bas à droite de la zone, soit le secteur de plus petit indice et celui de plus grand et on vérifie
+    # que l'on a bien toute les zones entre xa et xb pour tout x entre xa et xb
