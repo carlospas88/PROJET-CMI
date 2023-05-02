@@ -239,5 +239,3 @@ def couleurPixels(img: image, x: int, y: int) -> couleur:
     _errS("couleurPixels", "couleurPixel")
 def couleurpixels(img: image, x: int, y: int) -> couleur:
     _errS("couleurpixels", "couleurPixel")
-
-print("bibimages.py")
