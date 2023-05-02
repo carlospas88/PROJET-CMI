@@ -11,7 +11,11 @@ from Affichage import *
 rep = os.getcwd()  #permet d'obtenir l'adresse du repertoire dans lequel on se trouve, par ex ...\ProjetOptim
 rep = rep + '\smalldata' #rep prend comme valeur l'adresse du dossier smalldata
 ListeFichier = os.listdir(rep)  #permet de créer un tableau avec le nom de tous les fichiers qui se trouvent dans le dossier smalldata
-#adresse = rep + '\\' + ListeFichier[0] #permet d'obtenir l'adresse du premier fichier dans smalldata, on peut ensuite faire une boucle pour tout lire en changeant l'indice
+
+
+# vérif solution permet de vérifier si il est possible d'obtenir une solution car pour certain fichiers (3), il y a au moins une
+# espèce qui n'est pas présente en quantité suffisante.
+# il est nécessaire de le faire dès le début car sinon cela peut provoquer des bugs dans l'algorithme
 
 def VerifSolutionPossible(Taille,nbEsp,Espece,T):
     testEspece = [0]*nbEsp
@@ -23,6 +27,13 @@ def VerifSolutionPossible(Taille,nbEsp,Espece,T):
         if Espece[i] > testEspece[i]:
             return False
     return True
+
+# TestAll permet de tester les 343 fichier avec un algorithme afin de savoir si il y en a qui posent problème.
+# NumAlgo correspond au numéro de l'algorithme, et erreur et un booléen qui permet de dire si l'on veut afficher le nom des fichiers
+# que l'on test afin de savoir si il y a un bug quel fichier le provoque (on ne l'utilisera pas en général)
+# Lorsque erreur est égale à False alors le programme renvoie le nom des fichier qui posent problèmes uniquement en indiquant
+# "impossible" si il n'y a pas de solution (on utilise Verif Solution) et
+# "erreur" si il y a une erreur dans la solution (on utilise le vérificateur)
 
 def TestAll(NumAlgo,erreur):
     for TEST in range(342):
@@ -40,6 +51,10 @@ def TestAll(NumAlgo,erreur):
         else:
             print("Impossible",adresse)
 
+# TestSeul permet de tester un fichier en particulier en mettant nom.txt pour le nom et non l'adresse
+# Apercu est un booléen qui permet d'afficher l'aperçu ou non
+# Dans ce cas le vérificateur ne nous dira pas juste si la solution est valide ou non, il affichera les causes de l'erreur            
+            
 def TestSeul(NumAlgo,nom,apercu):
     adresse = rep + '\\' + nom
     file = open(adresse,'r')
@@ -57,16 +72,22 @@ def TestSeul(NumAlgo,nom,apercu):
     else:
         print("Il est impossible d'atteindre l'objectif de protection pour l'une des espèce")
 
+        
+# Cette partie nous permet de faire nos tests en entrant directement les paramètres dans le terminal
+
 TypeTest = input("Entrer le type de test, 'Seul' ou 'All': ")
 NumAlgo = int(input("Entrer le numéro de l'algorithme : "))
-if TypeTest == "All":
-    testEr = input("Entrer True pour afficher tous les noms, False pour afficher seulement ceux qui posent problème : ")
-    TestAll(NumAlgo,testEr)
-else:
+if NumAlgo > 1:
+    print("Il n'y a pas d'algorithme avec ce numéro")
+elif TypeTest == "All":
+    erreur = input("Entrer True pour afficher tous les noms, False pour afficher seulement ceux qui posent problème : ")
+    TestAll(NumAlgo,erreur)
+elif TypeTest == "Seul":
     nom = input("Entrer le nom du fichier sous le format 'archipel_2_10_10_2.txt' par exemple : ")
     apercu = input("Entrer 'True' pour afficher une image des zones protégées : ")
     TestSeul(NumAlgo,nom,apercu)
-
+else:
+    print("Les seuls paramètres possibles sont 'Seul' ou 'All'")
 
 
 #343 fichier à tester
