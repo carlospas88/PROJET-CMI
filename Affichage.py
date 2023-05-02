@@ -1,6 +1,6 @@
 from bibimages import *
 
-def afficheApercu(Taille,TAp,img): # lit le tableau et regarde la case [1] qui a la valeur Terre/mer
+def afficheApercu(Taille,TAp,img): # Permet de créer l'image avec les zones de terre et les zones de mer 
     for i in range(Taille):
         for j in range(Taille):
             if TAp[i][j][1] == 0 :
@@ -11,7 +11,7 @@ def afficheApercu(Taille,TAp,img): # lit le tableau et regarde la case [1] qui a
                 print("La zone (",i,",",j,") n'as pas une valeur correcte, 0 ou 1 (Mer / Terre), sa valeur est de : ",TAp[i][j][1])
     return img
 
-def afficheApercuFinal(Taille,TSol,img): #Affiche les zones protégée 
+def afficheApercuFinal(Taille,TSol,img): # Modifie l'image de AfficheApercu pour mettre les zones protégée 
     q = 0 
     for i in range(len(TSol)):
         i = int(TSol[i])
