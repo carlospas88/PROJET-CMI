@@ -17,12 +17,12 @@ ListeFichier = os.listdir(rep)  #permet de créer un tableau avec le nom de tous
 # espèce qui n'est pas présente en quantité suffisante.
 # il est nécessaire de le faire dès le début car sinon cela peut provoquer des bugs dans l'algorithme
 
-def VerifSolutionPossible(Taille,nbEsp,Espece,T):
+def VerifSolutionPossible(Taille,nbEsp,Espece,TableauLecture):
     testEspece = [0]*nbEsp
     for x in range(Taille):
         for y in range(Taille):
             for i in range(nbEsp):
-                testEspece[i] = testEspece[i] + T[x][y][i+2]
+                testEspece[i] = testEspece[i] + TableauLecture[x][y][i+2]
     for i in range(nbEsp):
         if Espece[i] > testEspece[i]:
             return False
@@ -41,11 +41,11 @@ def TestAll(NumAlgo,erreur):
         file = open(adresse,'r')
         if erreur == "True":
             print("Lecture de :",adresse)
-        (Taille,T,espece,nbEsp) = readfile(file)
-        if VerifSolutionPossible(Taille,nbEsp,espece,T) == True:
+        (Taille,TableauLecture,espece,nbEsp) = readfile(file)
+        if VerifSolutionPossible(Taille,nbEsp,espece,TableauLecture) == True:
             if NumAlgo == 1:
-                Solution = algo1(T,Taille,espece,nbEsp)
-            verif = verificateur(T,Solution,1,len(Solution),1,espece,Taille,False)
+                Solution = algo1(TableauLecture,Taille,espece,nbEsp)
+            verif = verificateur(TableauLecture,Solution,1,len(Solution),1,espece,Taille,False)
             if verif == False and erreur != "True":
                 print("Erreur",adresse)
         else:
@@ -58,14 +58,14 @@ def TestAll(NumAlgo,erreur):
 def TestSeul(NumAlgo,nom,apercu):
     adresse = rep + '\\' + nom
     file = open(adresse,'r')
-    (Taille,T,espece,nbEsp) = readfile(file)
-    if VerifSolutionPossible(Taille,nbEsp,espece,T) == True:
+    (Taille,TableauLecture,espece,nbEsp) = readfile(file)
+    if VerifSolutionPossible(Taille,nbEsp,espece,TableauLecture) == True:
         if NumAlgo == 1:
-            Solution = algo1(T,Taille,espece,nbEsp)
-        verificateur(T,Solution,1,len(Solution),1,espece,Taille,True)
+            Solution = algo1(TableauLecture,Taille,espece,nbEsp)
+        verificateur(TableauLecture,Solution,1,len(Solution),1,espece,Taille,True)
         if apercu =="True":
             img = nouvelleImage(Taille,Taille)
-            afficheApercu(Taille,T,img)
+            afficheApercu(Taille,TableauLecture,img)
             afficheApercuFinal(Taille,Solution,img)
         print("La solution est :\n",Solution)
         print("Avec",len(Solution),"cases protégée")
