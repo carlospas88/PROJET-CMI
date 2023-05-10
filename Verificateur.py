@@ -111,11 +111,11 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
     # pour cela on prend les 2 coins en haut à gauche et en bas à droite de la zone, soit le secteur de plus petit indice et celui de plus grand et on vérifie
     # que l'on a bien toute les zones entre xa et xb pour tout x entre xa et xb et ya yb aussi
 
-    # TabSuperposition va nous permetre de vérifier que les zones ne se superposent pas, on va y mettre les coordonnée des coins de chaque zone lorsque
+    # TabSup va nous permetre de vérifier que les zones ne se superposent pas, on va y mettre les coordonnée des coins de chaque zone lorsque
     # l'on vérifie les zones individuellement
 
     if cas == 2:
-        TabSuperposition = [0]* len(TabSolution)
+        TabSup = [0]* len(TabSolution)
         NumZone = 0
 
         #On regarde les zones une par une
@@ -141,7 +141,7 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
             y1 = min//Taille
             y2 = max//Taille
 
-            TabSuperposition[NumZone] = [x1,x2,y1,y2]
+            TabSup[NumZone] = [x1,x2,y1,y2]
             # on regarde si la taille du tableau de la zone correspond à l'aire pour savoir si on a protéger le bon nombre de zone
             if len(TabZone) != (x2-x1+1)*(y2-y1+1):
                 if InfoErreur == True:
@@ -175,8 +175,14 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
     #[y1a,y1b] et [y2a,y2b], si les deux intersections ne sont pas vides alors les zones se superposent
 
         for i in range(NumZone):
-            for j in range(i,NumZone):
-                1
+            for j in range(i+1,NumZone):
+                if (TabSup[i][0] > TabSup[j][0]-2 and TabSup[i][0] < TabSup[i][1]+2) or (TabSup[i][1] > TabSup[j][0]-2 and TabSup[i][1] < TabSup[i][1]+2):
+                    if (TabSup[i][2] > TabSup[j][2]-2 and TabSup[i][2] < TabSup[i][3]+2) or (TabSup[i][3] > TabSup[j][2]-2 and TabSup[i][3] < TabSup[i][3]+2):
+                        if InfoErreur == True:
+                            print("Les zones",i,"et",j,"se superposent")
+                        else:
+                            return False
+
 
 
 
