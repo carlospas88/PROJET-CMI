@@ -87,8 +87,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -147,8 +151,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -185,8 +193,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -243,8 +255,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -280,8 +296,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -317,8 +337,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -374,8 +398,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -411,8 +439,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -448,8 +480,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -485,8 +521,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -542,8 +582,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -575,12 +619,16 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         y01 = Rectangle[0]//Taille
                         x02 = Rectangle[1]%Taille
                         y02 = Rectangle[1]//Taille
-                        xmin = min(x1,x2)
-                        xmax = max(x1,x2)
-                        ymin = min(y1,y2)
-                        ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin = min(x01,x02)
+                        xmax = max(x01,x02)
+                        ymin = min(y01,y02)
+                        ymax = max(y01,y02)
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -616,8 +664,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -653,8 +705,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -690,8 +746,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1):
-                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -747,8 +807,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 or xmin-1 <= x02) and (x01 <= xmax+1 or x02 <= xmax+1):
-                            if (ymin-1 <= y01 or ymin-1 <= y02) and (y01 <= ymax+1 or y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -784,8 +848,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 or xmin-1 <= x02) and (x01 <= xmax+1 or x02 <= xmax+1):
-                            if (ymin-1 <= y01 or ymin-1 <= y02) and (y01 <= ymax+1 or y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -821,8 +889,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 or xmin-1 <= x02) and (x01 <= xmax+1 or x02 <= xmax+1):
-                            if (ymin-1 <= y01 or ymin-1 <= y02) and (y01 <= ymax+1 or y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -858,8 +930,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 or xmin-1 <= x02) and (x01 <= xmax+1 or x02 <= xmax+1):
-                            if (ymin-1 <= y01 or ymin-1 <= y02) and (y01 <= ymax+1 or y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -895,8 +971,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 or xmin-1 <= x02) and (x01 <= xmax+1 or x02 <= xmax+1):
-                            if (ymin-1 <= y01 or ymin-1 <= y02) and (y01 <= ymax+1 or y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]
@@ -932,8 +1012,12 @@ def AlgoRectangle(TabDonnee,Taille,Espece,nbEsp,nbZones):
                         xmax = max(x1,x2)
                         ymin = min(y1,y2)
                         ymax = max(y1,y2)
-                        if (xmin-1 <= x01 or xmin-1 <= x02) and (x01 <= xmax+1 or x02 <= xmax+1):
-                            if (ymin-1 <= y01 or ymin-1 <= y02) and (y01 <= ymax+1 or y02 <= ymax+1):
+                        xmin2 = min(x01,x02)
+                        xmax2 = max(x01,x02)
+                        ymin2 = min(y01,y02)
+                        ymax2 = max(y01,y02)
+                        if (xmin-1 <= x01 and x01 <= xmax+1) or (xmin-1 <= x02 and x02 <= xmax+1) or (xmin2-1 <= x1 and x1 <= xmax2+1) or (xmin2-1 <= x2 and x2 <= xmax2+1):
+                            if (ymin-1 <= y01 and y01 <= ymax+1) or (ymin-1 <= y02 and y02 <= ymax+1) or (ymin2-1 <= y1 and y1 <= ymax2+1) or (ymin2-1 <= y2 and y2 <= ymax2+1) :
                                 TEST = False
             if TEST == True:
                 ListeRectanglesPossibles = ListeRectanglesPossibles + [Rectangle]

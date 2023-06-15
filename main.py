@@ -13,8 +13,8 @@ from Minorant import *
 
 
 
-rep = os.getcwd()  #permet d'obtenir l'adresse du repertoire dans lequel on se trouve, par ex ...\ProjetOptim
-rep = rep + '\smalldata' #rep prend comme valeur l'adresse du dossier smalldata
+rep1 = os.getcwd()  #permet d'obtenir l'adresse du repertoire dans lequel on se trouve, par ex ...\ProjetOptim
+rep = rep1 + '\smalldata' #rep prend comme valeur l'adresse du dossier smalldata
 ListeFichier = os.listdir(rep)  #permet de créer un tableau avec le nom de tous les fichiers qui se trouvent dans le dossier smalldata
 
 
@@ -43,10 +43,11 @@ def VerifSolutionPossible(Taille,nbEsp,Espece,TableauLecture):
 def TestAll(NumAlgo,erreur,k):
     if NumAlgo == 3:
         Fichier10 = [[7,13],[30,36],[53,57],[76,82],[99,105],[122,128],[154,151],[168,174],[191,197],[214,220],[237,243],[260,266],[283,289],[306,312],[329,335]]
-        Fichier30 = [[14,20],[37,43]]
+        Fichier30 = [[14,20]]
         for TabTEST in Fichier30:
             for TEST in range(TabTEST[0],TabTEST[1]+1):
                 adresse = rep + '\\' + ListeFichier[TEST]
+                adressesolution = rep1 + '\\Solution\\AlgoRectangle'+str(k)+ ListeFichier[TEST]
                 file = open(adresse,'r')
                 if erreur == "True":
                     print(TEST,"Lecture de :",adresse)
@@ -69,6 +70,7 @@ def TestAll(NumAlgo,erreur,k):
                         print(ListeFichier[TEST],";",minorant,";",temps,";","Pas De Solution")
                     if verif !=-1 and verif != False:
                         print(ListeFichier[TEST],";",minorant,";",temps,";",secteurs)
+                        ecritureSolution(Solution,k,secteurs,adressesolution)
                 else:
                     print(ListeFichier[TEST],";","Impossible")
     else:   
@@ -83,12 +85,15 @@ def TestAll(NumAlgo,erreur,k):
                     debut = time.time()
                     Solution = algo1(TableauLecture,Taille,espece,nbEsp)
                     temps = time.time() - debut
+                    adressesolution = rep1 + '\\Solution\\ALGO1' + ListeFichier[TEST]
                 if NumAlgo == 2:
                     debut = time.time()
                     Solution = algo2(TableauLecture,Taille,espece,nbEsp)
                     temps = time.time() - debut
+                    adressesolution = rep1 + '\\Solution\\ALGO2' + ListeFichier[TEST]
                 verif = verificateur(TableauLecture,Solution,1,len(Solution),1,espece,Taille,False)
                 minorant = Minorant(Taille,nbEsp,espece,TableauLecture)
+                ecritureSolution(Solution,1,len(Solution),adressesolution)
                 if verif == False:
                     print(TEST,"Erreur",ListeFichier[TEST])
                 elif verif != False:
@@ -121,7 +126,7 @@ def TestSeul(NumAlgo,nom,apercu,k):
         if apercu =="True":
             img = nouvelleImage(Taille,Taille)
             afficheApercu(Taille,TableauLecture,img)
-            afficheApercuFinal(Taille,Solution,img)
+            afficheApercuFinal(Taille,Solution,img,NumAlgo)
         print("La solution est :\n",Solution)
         print("Avec",len(Solution),"cases protégée")
     else:
@@ -130,11 +135,11 @@ def TestSeul(NumAlgo,nom,apercu,k):
 # Cette partie nous permet de faire nos tests en entrant directement les paramètres dans le terminal
 k = 2
 TypeTest = input("Entrer le type de test, 'Seul' ou 'All': ")
-NumAlgo = int(input("Entrer le numéro de l'algorithme : "))
+NumAlgo = int(input("Entrer le numéro de l'algorithme (1 et 2 pour les secteurs libres, 3 pour les rectangles): "))
 if NumAlgo > 3:
     print("Il n'y a pas d'algorithme avec ce numéro")
 elif TypeTest == "All":
-    erreur = input("Entrer True pour afficher tous les noms, False pour afficher seulement ceux qui posent problème : ")
+    erreur = input("Entrer True pour afficher tous les noms, False pour afficher seulement ceux qui posent problème (Mettre False par défault) : ")
     if NumAlgo == 3:
         k = int(input("Entrer le nombre de zones (de 2 à 7) : "))
     TestAll(NumAlgo,erreur,k)
@@ -147,7 +152,7 @@ elif TypeTest == "Seul":
 else:
     print("Les seuls paramètres possibles sont 'Seul' ou 'All'")
 
-#  archipel_2_10_10_5.txt
+#  archipel_2_10_10_5.txt   ////// peninsule_2_10_10_5.txt
 
 #343 fichier à tester
 

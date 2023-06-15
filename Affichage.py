@@ -11,11 +11,18 @@ def afficheApercu(Taille,TAp,img): # Permet de créer l'image avec les zones de 
                 print("La zone (",i,",",j,") n'as pas une valeur correcte, 0 ou 1 (Mer / Terre), sa valeur est de : ",TAp[i][j][1])
     return img
 
-def afficheApercuFinal(Taille,TSol,img): # Modifie l'image de AfficheApercu pour mettre les zones protégée 
-    q = 0 
-    for i in range(len(TSol)):
-        i = int(TSol[i])
-        y = i//Taille
-        x = i%Taille
-        colorierPixel(img,x,y,(255,100,100))
+def afficheApercuFinal(Taille,TSol,img,cas): # Modifie l'image de AfficheApercu pour mettre les zones protégée 
+    if cas == 1 or cas == 2:
+        for i in range(len(TSol)):
+            i = int(TSol[i])
+            y = i//Taille
+            x = i%Taille
+            colorierPixel(img,x,y,(255,100,100))
+    if cas == 3 :
+        for j in TSol:
+            for i in range(len(j)):
+                i = int(j[i])
+                y = i//Taille
+                x = i%Taille
+                colorierPixel(img,x,y,(255,100,100))
     afficherImage(img)
