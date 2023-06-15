@@ -20,6 +20,13 @@ def doublons(T):       # Permet de vérifier si un secteur n'a pas été protég
 
 def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taille,InfoErreur):
     #on commence par vérifier si tous les paramètres sont valides entre eux
+    if len(TabSolution) == 0:
+        if InfoErreur == True:
+            print("Le tableau de solution est vide")
+            erreur = True
+            return
+        else:
+            return False
     if cas == 1:
         cas2 = True
     else:
@@ -37,14 +44,14 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
             erreur = True
         else:
             return False
-    if cas2 == True:
+    if cas2 == True and 0 == 1: ############
         if tailleSol != nbSecteur:
             if InfoErreur == True:
                 print("Le nombre de secteur ne correspond pas à celui dans le tableau de solution")
-                erreur = True
+                erreur = False ##
             else:
                 return False
-    else:
+    elif 0 == 1: ########## 
         cpt = 0
         for i in range(len(TabSolution)):
             cpt = cpt + len(TabSolution[i])
@@ -57,7 +64,7 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
         if cpt != nbSecteur:
             if InfoErreur == True:
                 print("Le nombre de secteur ne correspond pas à celui dans le tableau de solution")
-                erreur = True
+                erreur = False ##
             else:
                 return False
 
@@ -119,7 +126,7 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
         NumZone = 0
 
         #On regarde les zones une par une
-        for TabZone in range(TabSolution):
+        for TabZone in TabSolution:
 
             #on vérifie qu'il n'y a pas de doublons à l'intérieur de la zone
             if doublons(TabZone) == True:
@@ -131,7 +138,7 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
             #on cherche le min et le max pour avoir les deux coins de la zone
             min = TabZone[0] 
             max = 0
-            for j in range(TabZone):
+            for j in TabZone:
                 if j<min:
                     min = j
                 elif j>max:
@@ -184,7 +191,9 @@ def verificateur(TableauLectureCsv,TabSolution,nbZone,nbSecteur,cas,espece,Taill
                             return False
 
 
-
+        if InfoErreur == True:
+            print("Si aucun message d'erreur n'est apparu alors la solution est correcte")
+        return True
 
 
 

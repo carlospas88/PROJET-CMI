@@ -22,7 +22,7 @@ def readfile(file):
             espece = [0]*nbEsp #créer un tableau où l'on va mettre les quantités de poissons à protéger.
         
         if b > 0: # tant que b>0, on est encore en train de lire les lignes concernant les noms de poissons et la quantité à protéger
-            if b!=nbEsp+2 and b!=nbEsp+1: # marche, je ne sais pas trop pourquoi, il y a un décalage de deux, il y a bien un décalage de 1 car ce if est après l'autre ou b est définit, on lit donc la même ligne
+            if b!=nbEsp+2 and b!=1: # marche, je ne sais pas trop pourquoi, il y a un décalage de deux, il y a bien un décalage de 1 car ce if est après l'autre ou b est définit, on lit donc la même ligne
                 espece[cptEsp] = int(row[1]) #ajoute les valeurs à protéger
                 cptEsp = cptEsp +1
             b = b-1
@@ -36,7 +36,7 @@ def readfile(file):
                 for dz in range(Taille):
                     T[dy][dz] = [0]*(2+nbEsp) # on remplace les 0 des lignes par un tableau avec un nombre suffisant de cases pour mettre toutes les valeurs
         
-        if yTab == Taille and b == -1: # quand on arrive au bout de la ligne on passe à la colonne d'après
+        if yTab == Taille and b == -1: # quand on arrive au bout de la ligne on passe à la colonne d'après0
             yTab = 0
             xTab += 1
     file.close()

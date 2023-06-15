@@ -56,9 +56,9 @@ def sommeEspece(T,nbEsp):
     return sommeEsp
 
 def TestQt(Taille,n,T,Espece,nbEsp,testEspece):
-    #print(n,Espece,testEspece)
     x = n%Taille
     y = n//Taille
+    #print("Test Espece :",testEspece ,"Espece :",Espece, T[x][y])
     for i in range(nbEsp):
         testEspece[i] = testEspece[i] + T[x][y][i+2]
     for i in range(nbEsp):
@@ -75,16 +75,6 @@ def algo1(T,Taille,Espece,nbEsp):
         for j in range(Taille):
             TabAux[nbCase] = [j*Taille+i,sommeEspece(T[i][j],nbEsp)]
             nbCase = nbCase + 1
-    
-    #for i in range(Taille**2):
-    #    max = TabAux[i][1]
-    #    for j in range(i,Taille**2):
-    #        if TabAux[j][1] > max:
-    #            max = TabAux[j][1]
-    #            vartemp = j
-    #    tmp=TabAux[i]
-    #    TabAux[i]=TabAux[vartemp]
-    #    TabAux[vartemp]=tmp
     TabAux = trifusion(TabAux)
     
     testEspece = [0]*nbEsp
@@ -93,10 +83,7 @@ def algo1(T,Taille,Espece,nbEsp):
     test = TestQt(Taille,TabAux[0][0],T,Espece,nbEsp,testEspece)
     while test == False :
         solution = solution + [TabAux[n][0]]
-        #print(n,TabAux[n])
         n = n + 1
         test = TestQt(Taille,TabAux[n][0],T,Espece,nbEsp,testEspece)
     solution = solution + [TabAux[n][0]]
-    #print("Objectif :",Espece)
-    #print("Nombre protégé",testEspece,"")
     return solution
